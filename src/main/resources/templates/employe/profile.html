@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:replace="layout :: layout">
+<head>
+    <title>Profil - Intranet RH</title>
+</head>
+<body>
+<section>
+    <h2>Profil de l'employé</h2>
+    <p>Nom : <span th:text="${employe.nom}"></span></p>
+    <p>Prénom : <span th:text="${employe.prenom}"></span></p>
+    <p>Email : <span th:text="${employe.email}"></span></p>
+    <p>Poste : <span th:text="${employe.poste}"></span></p>
+    <a th:href="@{/employes/edit}">Modifier le profil</a>
+</section>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:replace="layout :: layout">
+<head>
+    <title>Mes Congés - Intranet RH</title>
+</head>
+<body>
+<section>
+    <h2>Mes demandes de congés</h2>
+    <a th:href="@{/conges/nouveau}">Nouvelle demande</a>
+    <table border="1" cellpadding="5">
+        <thead>
+        <tr>
+            <th>Type</th>
+            <th>Date début</th>
+            <th>Date fin</th>
+            <th>Motif</th>
+            <th>Statut</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="conge : ${conges}">
+            <td th:text="${conge.type}"></td>
+            <td th:text="${conge.dateDebut}"></td>
+            <td th:text="${conge.dateFin}"></td>
+            <td th:text="${conge.motif}"></td>
+            <td th:text="${conge.statut}"></td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+</body>
+</html>

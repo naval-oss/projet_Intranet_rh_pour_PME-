@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="fr" th:replace="layout :: layout">
+<head>
+    <title>Modifier Profil - Intranet RH</title>
+</head>
+<body>
+<section>
+    <h2>Modifier Profil</h2>
+    <form th:action="@{/employes/edit}" th:object="${employe}" method="post">
+        <label>Nom : <input type="text" th:field="*{nom}" required/></label><br/>
+        <label>Prénom : <input type="text" th:field="*{prenom}" required/></label><br/>
+        <label>Email : <input type="email" th:field="*{email}" required/></label><br/>
+        <label>Poste : <input type="text" th:field="*{poste}" required/></label><br/>
+        <button type="submit">Enregistrer</button>
+    </form>
+    <a th:href="@{/employes/profile}">Retour</a>
+</section>
+</body>
+</html>
